@@ -5,7 +5,18 @@
 // которая вычисляет сумму чисел от N до M.
 
 #include "logic.h"
+int recursion(int n, int m) {
+	if (n == m) {
+		return n;
+	}
+	return recursion(n, m - 1) + m;
+}
+
 
 int sum(int n, int m) {
-	return 0;
+	if (n > m) {
+		return recursion(m, n);
+	}
+
+	return recursion(n, m);
 }
