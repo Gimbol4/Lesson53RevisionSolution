@@ -3,3 +3,14 @@
 // 
 // Необходимо спроектировать и реализовать программу, 
 // которая подсчитывает количество цифр в заданном целом числе.
+#include "logic.h"
+
+int recursion(int number) {
+	if (number < 10) {
+		return 1;
+	}
+	return recursion(number / 10) + 1;
+}
+int count(int number) {
+	return recursion(abs(number));
+}
