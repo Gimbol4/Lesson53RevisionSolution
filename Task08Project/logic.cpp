@@ -4,3 +4,19 @@
 // Необходимо спроектировать и реализовать программу, 
 // которая находит n-ное число в последовательности 
 // степеней двойки: 2, 4, 8, 16, 32, ...
+#include "logic.h"
+
+int recursion(int index) {
+	if (index == 1) {
+		return 2;
+	}
+
+	return 2 * recursion(index - 1);
+}
+
+int get_number(int index) {
+	if (index < 1) {
+		return -1;
+	}
+	return recursion(index);
+}
